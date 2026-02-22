@@ -1,0 +1,892 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Monitor Frame */
+.monitor {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 10px;
+}
+
+.monitor-bezel {
+    width: 95vw;
+    height: 90vh;
+    aspect-ratio: auto;
+    background: #2a2a2a;
+    border: 30px solid #1a1a1a;
+    border-radius: 20px;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 20px 60px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(0, 255, 0, 0.1);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.monitor-bezel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(0deg,
+            rgba(0, 255, 0, 0.03),
+            rgba(0, 255, 0, 0.03) 2px,
+            transparent 2px,
+            transparent 4px);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.terminal {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    color: #00ff00;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+    text-shadow:
+        0 0 10px rgba(0, 255, 0, 0.8),
+        0 0 20px rgba(0, 255, 0, 0.4),
+        0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+/* Text Styling */
+.boot-line {
+    margin: 4px 0;
+    animation: slideIn 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+.boot-line:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.boot-line:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.boot-line:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.boot-line:nth-child(4) {
+    animation-delay: 1s;
+}
+
+.boot-line:nth-child(5) {
+    animation-delay: 1.3s;
+}
+
+.boot-line:nth-child(6) {
+    animation-delay: 1.6s;
+}
+
+.boot-line:nth-child(7) {
+    animation-delay: 1.9s;
+}
+
+.boot-line:nth-child(8) {
+    animation-delay: 2.2s;
+}
+
+.boot-line:nth-child(9) {
+    animation-delay: 2.5s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content {
+    animation: fadeIn 0.6s ease-in-out 2.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.title {
+    font-size: 4.5em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    animation: typewriter 2.5s steps(40, end) 2.8s backwards;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.text-glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.text-glitch:hover {
+    animation: glitch 0.3s;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow:
+            -3px 0 #00ff00,
+            3px 0 #00ff00,
+            0 0 15px rgba(0, 255, 0, 0.8);
+    }
+
+    50% {
+        text-shadow:
+            -2px 0 #00ff00,
+            2px 0 #00ff00,
+            0 0 20px rgba(0, 255, 0, 1);
+    }
+
+    100% {
+        text-shadow:
+            0 0 #00ff00,
+            0 0 #00ff00,
+            0 0 10px rgba(0, 255, 0, 0.6);
+    }
+}
+
+.subtitle {
+    color: #00ff00;
+    opacity: 0.7;
+    font-size: 0.9em;
+    animation: blink 0.7s infinite 2.8s;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Prompt and Response */
+.prompt {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.response {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.info-section {
+    line-height: 1.8;
+}
+
+.info-section div {
+    animation: typeIn 0.08s ease-out forwards;
+    opacity: 0;
+    position: relative;
+}
+
+.info-section div:nth-child(1) {
+    animation-delay: 3.0s;
+}
+
+.info-section div:nth-child(2) {
+    animation-delay: 3.3s;
+}
+
+.info-section div:nth-child(3) {
+    animation-delay: 3.6s;
+}
+
+@keyframes typeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Menu Items */
+.menu-item {
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 4px 0;
+    transition: all 0.2s ease;
+    display: inline-block;
+    animation: fadeIn 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+.menu-item:nth-of-type(1) {
+    animation-delay: 3.9s;
+}
+
+.menu-item:nth-of-type(2) {
+    animation-delay: 4.2s;
+}
+
+.menu-item:nth-of-type(3) {
+    animation-delay: 4.5s;
+}
+
+.menu-item:hover {
+    background: #00ff00;
+    color: #000;
+    text-shadow:
+        0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 0 20px rgba(0, 255, 0, 0.8),
+        0 0 40px rgba(0, 255, 0, 0.4),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.menu-item:hover .arrow {
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    }
+
+    50% {
+        transform: translateX(12px);
+        text-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+
+    100% {
+        transform: translateX(0);
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    }
+}
+
+.arrow {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.highlight {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Cursor */
+.blink-cursor {
+    display: inline-block;
+    margin-top: 30px;
+    animation: blink 0.7s infinite 4.8s;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.9);
+}
+
+.footer {
+    margin-top: auto;
+    text-align: right;
+    opacity: 0.6;
+    font-size: 0.85em;
+    animation: fadeIn 0.4s ease-out 4.8s forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .monitor-bezel {
+        border: 15px solid #1a1a1a;
+    }
+
+    .terminal {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.8em;
+    }
+
+    .prompt {
+        font-size: 0.9em;
+    }
+}
+
+/* Scrollbar */
+.terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 4px;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+}
+
+/* ASCII Art & Decorations */
+.ascii-divider {
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0.6;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #00ff00;
+    opacity: 0.7;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+
+    50% {
+        opacity: 0.4;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+    }
+}
+
+.prompt-icon {
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Enhanced Hover States */
+.menu-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.menu-item:hover::before {
+    left: 0;
+}
+
+/* Smooth transitions for content sections */
+.project-item,
+.about-item {
+    transition: all 0.2s ease;
+}
+
+.project-item:hover {
+    margin-left: 10px;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+}
+
+/* Loading animation for future use */
+@keyframes loading {
+    0% {
+        content: '...';
+    }
+
+    33% {
+        content: '▌..';
+    }
+
+    66% {
+        content: '▌▌.';
+    }
+
+    100% {
+        content: '▌▌▌';
+    }
+}
+
+/* Smooth text appearance */
+@keyframes glowIn {
+    from {
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(0, 255, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    }
+}
+
+/* Better responsive monitor */
+@media (max-height: 600px) {
+    .monitor-bezel {
+        border: 15px solid #1a1a1a;
+    }
+
+    .terminal {
+        padding: 25px;
+        font-size: 0.9em;
+    }
+}
+
+/* ============= FUTURISTIC ANIMATIONS ============= */
+
+/* Enhanced glitch effect */
+@keyframes glitchFlux {
+    0% {
+        text-shadow:
+            -3px 0 #00ff00,
+            3px 0 #00ff00,
+            -6px 0 #00ff88,
+            6px 0 #00ff88;
+        transform: translate(0);
+    }
+
+    20% {
+        text-shadow:
+            -2px 0 #00ff00,
+            2px 0 #00ff00,
+            -4px 0 #00ff88,
+            4px 0 #00ff88;
+        transform: translate(-2px, 1px);
+    }
+
+    40% {
+        text-shadow:
+            -4px 0 #00ff00,
+            4px 0 #00ff00,
+            -8px 0 #00ff88,
+            8px 0 #00ff88;
+        transform: translate(2px, -1px);
+    }
+
+    60% {
+        text-shadow:
+            -1px 0 #00ff00,
+            1px 0 #00ff00,
+            -3px 0 #00ff88,
+            3px 0 #00ff88;
+        transform: translate(-1px, 0);
+    }
+
+    100% {
+        text-shadow:
+            -3px 0 #00ff00,
+            3px 0 #00ff00,
+            -6px 0 #00ff88,
+            6px 0 #00ff88;
+        transform: translate(0);
+    }
+}
+
+/* Neon glow pulse */
+@keyframes neonGlow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 5px rgba(0, 255, 0, 0.5),
+            0 0 15px rgba(0, 255, 0, 0.3);
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px rgba(0, 255, 0, 1),
+            0 0 30px rgba(0, 255, 0, 0.8),
+            0 0 50px rgba(0, 255, 0, 0.4);
+    }
+}
+
+/* Holographic flicker */
+@keyframes holographic {
+
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px rgba(0, 255, 0, 0.8),
+            0 0 20px rgba(0, 255, 0, 0.4);
+    }
+
+    50% {
+        opacity: 0.95;
+        text-shadow:
+            0 0 15px rgba(0, 255, 0, 1),
+            0 0 25px rgba(0, 255, 0, 0.6);
+    }
+}
+
+/* Floating animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Rotating animation */
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Wave effect */
+@keyframes wave {
+    0% {
+        transform: skewX(0deg);
+    }
+
+    10% {
+        transform: skewX(-5deg);
+    }
+
+    20% {
+        transform: skewX(5deg);
+    }
+
+    30% {
+        transform: skewX(-5deg);
+    }
+
+    40% {
+        transform: skewX(5deg);
+    }
+
+    50% {
+        transform: skewX(0deg);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+/* Data stream animation */
+@keyframes dataStream {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Cyber flickering text */
+@keyframes cyberFlicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(0, 255, 0, 0.8),
+            0 0 20px rgba(0, 255, 0, 0.4);
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+        opacity: 0.7;
+    }
+}
+
+/* Scanline sweep */
+@keyframes scanlineSweep {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* Rainbow glow */
+@keyframes rainbowGlow {
+    0% {
+        text-shadow:
+            0 0 15px #00ff00,
+            0 0 30px #00ff00;
+    }
+
+    25% {
+        text-shadow:
+            0 0 15px #00ffff,
+            0 0 30px #00ffff;
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px #00ff00,
+            0 0 30px #00ff88;
+    }
+
+    75% {
+        text-shadow:
+            0 0 15px #00ffff,
+            0 0 30px #00ff00;
+    }
+
+    100% {
+        text-shadow:
+            0 0 15px #00ff00,
+            0 0 30px #00ff00;
+    }
+}
+
+/* Pulsing intensity */
+@keyframes intensePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+/* Apply animations to interactive elements */
+.title {
+    animation: neonGlow 2s ease-in-out infinite;
+}
+
+.prompt-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.menu-item {
+    animation: intensePulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.status-indicator {
+    animation: intensePulse 1.5s ease-in-out infinite;
+}
+
+/* Animated logo/icon container */
+.animated-icon {
+    display: inline-block;
+    animation: rotate360 4s linear infinite;
+}
+
+.glitch-text {
+    animation: glitchFlux 2s ease-in-out infinite;
+}
+
+.holographic-text {
+    animation: holographic 3s ease-in-out infinite;
+}
+
+.cyber-flicker-text {
+    animation: cyberFlicker 0.3s infinite;
+}
+
+.floating-element {
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.wave-animation {
+    animation: wave 2.5s ease-in-out infinite;
+}
+
+/* Initial name entrance animation - Retro CRT Boot Effect */
+@keyframes retroNameAppear {
+    0% {
+        opacity: 0;
+        text-shadow: none;
+        transform: scaleY(0);
+        letter-spacing: -10px;
+    }
+
+    20% {
+        opacity: 0.3;
+        text-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
+        transform: scaleY(0.5);
+        letter-spacing: -5px;
+    }
+
+    40% {
+        opacity: 0.7;
+        text-shadow:
+            0 0 10px rgba(0, 255, 0, 0.6),
+            0 0 20px rgba(0, 255, 0, 0.3);
+        transform: scaleY(0.8);
+        letter-spacing: -2px;
+    }
+
+    60% {
+        opacity: 1;
+        text-shadow:
+            0 0 15px rgba(0, 255, 0, 0.9),
+            0 0 30px rgba(0, 255, 0, 0.5),
+            0 0 50px rgba(0, 255, 0, 0.2);
+        transform: scaleY(1.05);
+        letter-spacing: 0px;
+    }
+
+    80% {
+        opacity: 1;
+        text-shadow:
+            0 0 20px rgba(0, 255, 0, 1),
+            0 0 40px rgba(0, 255, 0, 0.6),
+            -2px 0 10px rgba(0, 255, 0, 0.4),
+            2px 0 10px rgba(0, 255, 0, 0.4);
+        transform: scaleY(1);
+        letter-spacing: 3px;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px rgba(0, 255, 0, 0.8),
+            0 0 20px rgba(0, 255, 0, 0.4);
+        transform: scaleY(1);
+        letter-spacing: 3px;
+    }
+}
+
+.nameEntrance {
+    animation: retroNameAppear 2.5s ease-in-out 2.8s forwards !important;
+    opacity: 0;
+}
