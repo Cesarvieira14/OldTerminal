@@ -373,22 +373,329 @@ body {
     animation: fadeIn 0.4s ease-out 4.8s forwards;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ============= RESPONSIVE DESIGN ============= */
+
+/* Ultra Small Devices (Mobile Portrait) */
+@media (max-width: 480px) {
+    .monitor {
+        padding: 5px;
+    }
+
+    .monitor-bezel {
+        width: 98vw;
+        height: 95vh;
+        border: 12px solid #1a1a1a;
+        border-radius: 12px;
+    }
+
+    .terminal {
+        padding: 15px;
+        font-size: 0.85em;
+    }
+
+    .title {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 0.7em;
+    }
+
+    .prompt {
+        font-size: 0.8em;
+        margin-top: 12px;
+    }
+
+    .status-bar {
+        font-size: 0.75em;
+        padding: 5px;
+    }
+
+    .animated-icon {
+        font-size: 0.8em;
+    }
+
+    .ascii-divider {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+    }
+
+    .wave-animation {
+        font-size: 0.7em;
+    }
+
+    .boot-line {
+        font-size: 0.75em;
+        margin: 2px 0;
+    }
+
+    .menu-item {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+
+    .info-section {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .response {
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+}
+
+/* Small Tablets / Landscape Phones */
+@media (min-width: 481px) and (max-width: 768px) {
+    .monitor {
+        padding: 8px;
+    }
+
+    .monitor-bezel {
+        width: 97vw;
+        height: 92vh;
+        border: 18px solid #1a1a1a;
+        border-radius: 15px;
+    }
+
+    .terminal {
+        padding: 20px;
+        font-size: 0.9em;
+    }
+
+    .title {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+    }
+
+    .prompt {
+        font-size: 0.85em;
+        margin-top: 15px;
+    }
+
+    .status-bar {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .animated-icon {
+        font-size: 0.9em;
+    }
+
+    .ascii-divider {
+        font-size: 0.85em;
+        letter-spacing: 1px;
+    }
+
+    .boot-line {
+        font-size: 0.8em;
+        margin: 3px 0;
+    }
+
+    .menu-item {
+        padding: 7px 12px;
+        font-size: 0.95em;
+    }
+
+    .info-section {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .response {
+        margin-bottom: 18px;
+        margin-left: 15px;
+    }
+}
+
+/* Tablets / Small Desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .monitor {
+        padding: 10px;
+    }
+
+    .monitor-bezel {
+        width: 96vw;
+        height: 90vh;
+        border: 25px solid #1a1a1a;
+        border-radius: 18px;
+    }
+
+    .terminal {
+        padding: 28px;
+        font-size: 0.95em;
+    }
+
+    .title {
+        font-size: 3.5em;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 0.85em;
+    }
+
+    .prompt {
+        font-size: 0.9em;
+        margin-top: 18px;
+    }
+
+    .status-bar {
+        font-size: 0.85em;
+        padding: 7px;
+    }
+
+    .menu-item {
+        padding: 8px 14px;
+        font-size: 1em;
+    }
+
+    .info-section {
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    .response {
+        margin-bottom: 20px;
+        margin-left: 18px;
+    }
+}
+
+/* Large Desktops */
+@media (min-width: 1025px) {
+    .monitor {
+        padding: 10px;
+    }
+
+    .monitor-bezel {
+        width: 95vw;
+        height: 90vh;
+        border: 30px solid #1a1a1a;
+        border-radius: 20px;
+    }
+
+    .terminal {
+        padding: 30px;
+        font-size: 1em;
+    }
+
+    .title {
+        font-size: 4.5em;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .prompt {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+
+    .status-bar {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .menu-item {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+
+    .info-section {
+        line-height: 1.8;
+    }
+
+    .response {
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+}
+
+/* Extra Large Displays (4K, etc) */
+@media (min-width: 1920px) {
+    .title {
+        font-size: 5.5em;
+    }
+
+    .terminal {
+        padding: 40px;
+        font-size: 1.1em;
+    }
+
+    .prompt {
+        font-size: 1.1em;
+    }
+
+    .response {
+        font-size: 1.05em;
+    }
+}
+
+/* Height-based adjustments for very short screens */
+@media (max-height: 600px) {
     .monitor-bezel {
         border: 15px solid #1a1a1a;
+    }
+
+    .terminal {
+        padding: 15px;
+        font-size: 0.85em;
+    }
+
+    .title {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+
+    .header {
+        margin-bottom: 15px;
+    }
+
+    .prompt {
+        margin-top: 8px;
+        font-size: 0.8em;
+    }
+
+    .response {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 800px) and (orientation: landscape) {
+    .monitor {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .monitor-bezel {
+        height: 95vh;
     }
 
     .terminal {
         padding: 20px;
     }
 
-    .title {
-        font-size: 1.8em;
+    .header {
+        margin-bottom: 20px;
     }
 
-    .prompt {
-        font-size: 0.9em;
+    .title {
+        font-size: 2.5em;
+    }
+
+    .boot-line {
+        margin: 2px 0;
     }
 }
 
@@ -521,18 +828,6 @@ body {
     to {
         opacity: 1;
         text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
-    }
-}
-
-/* Better responsive monitor */
-@media (max-height: 600px) {
-    .monitor-bezel {
-        border: 15px solid #1a1a1a;
-    }
-
-    .terminal {
-        padding: 25px;
-        font-size: 0.9em;
     }
 }
 
