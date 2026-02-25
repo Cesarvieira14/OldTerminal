@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Black background -->
+  <rect width="100" height="100" fill="#000"/>
+  
+  <!-- Green "CV" text with glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Glow layer behind text -->
+  <text x="50" y="52" font-family="monospace" font-size="48" font-weight="bold" fill="#00ff00" text-anchor="middle" dominant-baseline="middle" opacity="0.4" filter="url(#glow)">CV</text>
+  
+  <!-- Main bright text -->
+  <text x="50" y="52" font-family="monospace" font-size="48" font-weight="bold" fill="#00ff00" text-anchor="middle" dominant-baseline="middle">CV</text>
+</svg>
