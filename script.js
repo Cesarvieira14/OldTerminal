@@ -50,6 +50,9 @@ function showProjects() {
                 <span style="opacity: 0.5;">drwxr-xr-x</span> &nbsp; <span style="opacity: 0.5;">Sep 2025</span> &nbsp; <span class="highlight">fake-news-detection-xai/</span>
             </div>
             <div style="animation: slideIn 0.3s ease-out 0.45s forwards; opacity: 0; line-height: 1.8;">
+                <span style="opacity: 0.5;">drwxr-xr-x</span> &nbsp; <span style="opacity: 0.5;">May 2024</span> &nbsp; <span class="highlight">pcs-booking-app/</span>
+            </div>
+            <div style="animation: slideIn 0.3s ease-out 0.55s forwards; opacity: 0; line-height: 1.8;">
                 <span style="opacity: 0.5;">drwxr-xr-x</span> &nbsp; <span style="opacity: 0.5;">...........</span> &nbsp; <span style="opacity: 0.6;">[ more coming soon ]</span>
             </div>
         </div>
@@ -140,8 +143,74 @@ function showProjects() {
             </div>
         </div>
 
-        <div class="ascii-divider" style="animation: fadeIn 0.3s ease-out 1s forwards; opacity: 0; margin-top: 20px;">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
-        <div style="margin-top: 20px; animation: fadeIn 0.3s ease-out 1.1s forwards; opacity: 0;">
+        <div class="menu-item project-entry" id="project-pcsbooking" style="animation: slideIn 0.3s ease-out 0.9s forwards; opacity: 0; margin-top: 12px; margin-bottom: 8px; padding: 10px 16px; border: 1px solid rgba(0,255,0,0.3);">
+            <span class="arrow">▶</span>
+            <span class="highlight"> [BSc FINAL YEAR PROJECT] &nbsp; Pc'sBooking — Mobile Booking App for Shared Computing Resources</span>
+            <span style="opacity: 0.5; font-size: 0.85em; margin-left: 10px;">— tap to read</span>
+        </div>
+
+        <div id="project-pcsbooking-details" style="display: none; margin-left: 20px; margin-bottom: 20px; border-left: 2px solid rgba(0,255,0,0.4); padding-left: 16px;">
+
+            <div class="prompt" style="margin-top: 12px;"><span class="prompt-icon">▶</span>$ cat README.md</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.95em;">
+                    <p style="margin-bottom: 8px;">
+                        An <span class="highlight">Android application</span> designed to dynamically allocate shared computing resources —
+                        built for environments such as offices, libraries, and co-working spaces where multiple users
+                        need access to shared PCs or remote desktops.
+                    </p>
+                    <p style="opacity: 0.75; font-size: 0.9em;">
+                        BSc Computer Science (Hons) &nbsp;|&nbsp; De Montfort University &nbsp;|&nbsp; May 2024
+                    </p>
+                </div>
+            </div>
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ cat stack.txt</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div>● <span class="highlight">Language:</span> &nbsp; Kotlin (primary) + Java</div>
+                    <div>● <span class="highlight">Architecture:</span> MVVM (Model-View-ViewModel)</div>
+                    <div>● <span class="highlight">Backend:</span> &nbsp;&nbsp; Firebase Realtime Database + Firebase Authentication</div>
+                    <div>● <span class="highlight">UI:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Android XML layouts · RecyclerView · ViewBinding · TabLayout</div>
+                    <div>● <span class="highlight">Tooling:</span> &nbsp;&nbsp; Android Studio · Git · Gradle · Agile (personal Scrum)</div>
+                    <div>● <span class="highlight">Repo:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/Cesarvieira14/PcsBooking.git" target="_blank" style="color: #00ff88;">github.com/Cesarvieira14/PcsBooking</a></div>
+                </div>
+            </div>
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ cat features.md</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div style="margin-bottom: 6px; opacity: 0.7;">── User Features ───────────────────────────────</div>
+                    <div>● Register / Login / Forgot Password (Firebase Auth)</div>
+                    <div>● Browse available PCs with real-time slot availability</div>
+                    <div>● Book a PC within a 7-day window — time slots (08:00–20:00)</div>
+                    <div>● View, cancel, and review past bookings</div>
+                    <div style="margin-top: 8px; margin-bottom: 6px; opacity: 0.7;">── Admin Features ──────────────────────────────</div>
+                    <div>● Manage all user bookings with today / this week / all filters</div>
+                    <div>● View detailed booking info and cancel any reservation</div>
+                    <div>● Full user management — update roles, delete accounts</div>
+                    <div>● Machine CRUD — create, update, delete PC entries</div>
+                </div>
+            </div>
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ echo "status"</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div><span style="color: #00ff88;">✓</span> &nbsp;Submitted — May 2024</div>
+                    <div><span style="color: #00ff88;">✓</span> &nbsp;Full report &amp; codebase available on request</div>
+                    <div><span style="color: #00ff88;">✓</span> &nbsp;<a href="https://github.com/Cesarvieira14/PcsBooking.git" target="_blank" style="color: #00ff88;">GitHub Repository</a></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px; margin-bottom: 6px;">
+                <div class="menu-item" id="collapse-pcsbooking" style="display: inline-block; font-size: 0.9em; padding: 4px 12px; border: 1px solid rgba(0,255,0,0.25);">
+                    <span class="arrow">▼</span> <span class="highlight">COLLAPSE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ascii-divider" style="animation: fadeIn 0.3s ease-out 1.1s forwards; opacity: 0; margin-top: 20px;">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
+        <div style="margin-top: 20px; animation: fadeIn 0.3s ease-out 1.2s forwards; opacity: 0;">
             <div class="menu-item" id="back-link" style="display: inline-block;">
                 <span class="arrow">&gt;</span> <span class="highlight">BACK TO MAIN</span>
             </div>
@@ -164,6 +233,22 @@ function showProjects() {
     collapse.addEventListener('click', () => {
         details.style.display = 'none';
         entry.querySelector('.arrow').textContent = '▶';
+    });
+
+    // Expand / collapse bachelor project card
+    const entryBsc = document.getElementById('project-pcsbooking');
+    const detailsBsc = document.getElementById('project-pcsbooking-details');
+    const collapseBsc = document.getElementById('collapse-pcsbooking');
+
+    entryBsc.addEventListener('click', () => {
+        const isOpen = detailsBsc.style.display !== 'none';
+        detailsBsc.style.display = isOpen ? 'none' : 'block';
+        entryBsc.querySelector('.arrow').textContent = isOpen ? '▶' : '▼';
+    });
+
+    collapseBsc.addEventListener('click', () => {
+        detailsBsc.style.display = 'none';
+        entryBsc.querySelector('.arrow').textContent = '▶';
     });
 
     document.getElementById('back-link').addEventListener('click', backToMain);
