@@ -143,7 +143,14 @@ function showProjects() {
             </div>
         </div>
 
-        <div class="menu-item project-entry" id="project-pcsbooking" style="animation: slideIn 0.3s ease-out 0.9s forwards; opacity: 0; margin-top: 12px; margin-bottom: 8px; padding: 10px 16px; border: 1px solid rgba(0,255,0,0.3);">
+        <div class="prompt" style="animation: slideIn 0.3s ease-out 0.75s forwards; opacity: 0;"><span class="prompt-icon">▶</span>$ cat pcs-booking-app/README.md</div>
+        <div class="response" style="margin-bottom: 10px;">
+            <div style="animation: slideIn 0.3s ease-out 0.85s forwards; opacity: 0;">
+                <span style="opacity: 0.6;"># Click to expand project details</span>
+            </div>
+        </div>
+
+        <div class="menu-item project-entry" id="project-pcsbooking" style="animation: slideIn 0.3s ease-out 0.9s forwards; opacity: 0; margin-top: 4px; margin-bottom: 8px; padding: 10px 16px; border: 1px solid rgba(0,255,0,0.3);">
             <span class="arrow">▶</span>
             <span class="highlight"> [BSc FINAL YEAR PROJECT] &nbsp; Pc'sBooking — Mobile Booking App for Shared Computing Resources</span>
             <span style="opacity: 0.5; font-size: 0.85em; margin-left: 10px;">— tap to read</span>
@@ -211,7 +218,7 @@ function showProjects() {
 
         <div class="ascii-divider" style="animation: fadeIn 0.3s ease-out 1.1s forwards; opacity: 0; margin-top: 20px;">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
         <div style="margin-top: 20px; animation: fadeIn 0.3s ease-out 1.2s forwards; opacity: 0;">
-            <div class="menu-item" id="back-link" style="display: inline-block;">
+            <div class="menu-item" id="back-link" style="animation: fadeIn 0.3s ease-out 0.7s forwards; opacity: 0;">
                 <span class="arrow">&gt;</span> <span class="highlight">BACK TO MAIN</span>
             </div>
         </div>
