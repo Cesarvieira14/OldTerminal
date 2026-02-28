@@ -40,49 +40,132 @@ function showProjects() {
     projectsSection.innerHTML = `
         <div class="prompt"><span class="prompt-icon">▶</span>$ cd projects/</div>
         <div class="response">
-            <div style="animation: typeIn 0.05s ease-out forwards; opacity: 0;">
+            <div style="animation: slideIn 0.3s ease-out 0.1s forwards; opacity: 0;">
                 Successfully changed directory to ~/projects
             </div>
         </div>
         <div class="prompt"><span class="prompt-icon">▶</span>$ ls -la</div>
-        <div class="response" style="margin-bottom: 30px;">
-            <div class="project-item glitch-text" style="animation: slideIn 0.3s ease-out 0.2s forwards; opacity: 0; margin-bottom: 15px;">
-                <strong>[1] AI Text Generation Model</strong>
-                <div style="margin-left: 20px; color: #00ff00; opacity: 0.8; font-size: 0.9em;">
-                    Deep learning project using transformers and NLP<br>
-                    Stack: Python, PyTorch, TensorFlow
+        <div class="response" style="margin-bottom: 10px;">
+            <div style="animation: slideIn 0.3s ease-out 0.3s forwards; opacity: 0; line-height: 1.8;">
+                <span style="opacity: 0.5;">drwxr-xr-x</span> &nbsp; <span style="opacity: 0.5;">Sep 2025</span> &nbsp; <span class="highlight">fake-news-detection-xai/</span>
+            </div>
+            <div style="animation: slideIn 0.3s ease-out 0.45s forwards; opacity: 0; line-height: 1.8;">
+                <span style="opacity: 0.5;">drwxr-xr-x</span> &nbsp; <span style="opacity: 0.5;">...........</span> &nbsp; <span style="opacity: 0.6;">[ more coming soon ]</span>
+            </div>
+        </div>
+
+        <div class="prompt"><span class="prompt-icon">▶</span>$ cat fake-news-detection-xai/README.md</div>
+        <div class="response" style="margin-bottom: 10px;">
+            <div style="animation: slideIn 0.3s ease-out 0.6s forwards; opacity: 0;">
+                <span style="opacity: 0.6;"># Click to expand project details</span>
+            </div>
+        </div>
+
+        <div class="menu-item project-entry" id="project-fakenews" style="animation: slideIn 0.3s ease-out 0.75s forwards; opacity: 0; margin-bottom: 8px; padding: 10px 16px; border: 1px solid rgba(0,255,0,0.3);">
+            <span class="arrow">▶</span>
+            <span class="highlight"> [MSc DISSERTATION] &nbsp; Fake News Detection Using NLP & Explainable AI</span>
+            <span style="opacity: 0.5; font-size: 0.85em; margin-left: 10px;">— tap to read</span>
+        </div>
+
+        <div id="project-fakenews-details" style="display: none; margin-left: 20px; margin-bottom: 20px; border-left: 2px solid rgba(0,255,0,0.4); padding-left: 16px;">
+
+            <div class="prompt" style="margin-top: 12px;"><span class="prompt-icon">▶</span>$ cat README.md</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.95em;">
+                    <p style="margin-bottom: 8px;">
+                        A comparative study evaluating a <span class="highlight">classical NLP pipeline</span> against
+                        a <span class="highlight">transformer-based model</span> for detecting fake news —
+                        with a dual focus on predictive performance <em>and</em> explainability.
+                    </p>
+                    <p style="opacity: 0.75; font-size: 0.9em;">
+                        MSc Artificial Intelligence &nbsp;|&nbsp; De Montfort University &nbsp;|&nbsp; September 2025
+                    </p>
                 </div>
             </div>
-            <div class="project-item holographic-text" style="animation: slideIn 0.3s ease-out 0.4s forwards; opacity: 0; margin-bottom: 15px;">
-                <strong>[2] Computer Vision Pipeline</strong>
-                <div style="margin-left: 20px; color: #00ff00; opacity: 0.8; font-size: 0.9em;">
-                    Image processing and object detection system<br>
-                    Stack: OpenCV, PyTorch, Python
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ cat stack.txt</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div>● <span class="highlight">Models:</span> &nbsp; TF-IDF + Logistic Regression &nbsp;|&nbsp; DistilBERT (Hugging Face)</div>
+                    <div>● <span class="highlight">XAI:</span> &nbsp;&nbsp;&nbsp;&nbsp; LIME (classical pipeline) &nbsp;|&nbsp; SHAP (transformer)</div>
+                    <div>● <span class="highlight">Dataset:</span> &nbsp;LIAR benchmark (12,836 political statements, binary-mapped)</div>
+                    <div>● <span class="highlight">Stack:</span> &nbsp;&nbsp;&nbsp;Python · PyTorch · scikit-learn · NLTK · Transformers · Google Colab</div>
+                    <div>● <span class="highlight">Eval:</span> &nbsp;&nbsp;&nbsp;&nbsp;Accuracy · F1 · ROC-AUC · MCC · McNemar's test · 5-fold CV</div>
                 </div>
             </div>
-            <div class="project-item glitch-text" style="animation: slideIn 0.3s ease-out 0.6s forwards; opacity: 0; margin-bottom: 15px;">
-                <strong>[3] Web Applications</strong>
-                <div style="margin-left: 20px; color: #00ff00; opacity: 0.8; font-size: 0.9em;">
-                    Full-stack web development projects<br>
-                    Stack: React, Node.js, MongoDB, PostgreSQL
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ cat results.log</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div style="margin-bottom: 6px; opacity: 0.7;">── Test Set Performance ──────────────────────</div>
+                    <div style="font-family: 'Courier New', monospace;">
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accuracy &nbsp; F1 &nbsp;&nbsp;&nbsp; ROC-AUC &nbsp; MCC</div>
+                        <div>TF-IDF + LR &nbsp;&nbsp;&nbsp; 0.597 &nbsp;&nbsp;&nbsp; 0.509 &nbsp; 0.623 &nbsp;&nbsp;&nbsp; 0.170</div>
+                        <div style="color: #00ff88;">DistilBERT &nbsp;&nbsp;&nbsp;&nbsp; 0.656 &nbsp;&nbsp;&nbsp; 0.588 &nbsp; 0.690 &nbsp;&nbsp;&nbsp; 0.295</div>
+                    </div>
+                    <div style="margin-top: 8px; opacity: 0.7;">── Statistical Significance ──────────────────</div>
+                    <div>McNemar's test: χ² = 14.35 &nbsp;|&nbsp; p = 1.52×10⁻⁴ &nbsp;✓ significant</div>
+                    <div style="margin-top: 8px; opacity: 0.7;">── Cross-Validation (5-fold mean ± SD) ───────</div>
+                    <div>DistilBERT F1: 0.581 ± 0.018 &nbsp;|&nbsp; AUC: 0.672 ± 0.004</div>
+                </div>
+            </div>
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ cat explainability.md</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div>● <span class="highlight">LIME</span> revealed that LR decisions often hinge on a single lexical trigger
+                        (e.g. the word <em>"trafficking"</em> overriding all context), exposing
+                        bag-of-words fragility.</div>
+                    <div style="margin-top: 6px;">● <span class="highlight">SHAP</span> showed DistilBERT distributing weight across multiple contextual
+                        tokens — moderating charged words through neighbouring entities,
+                        negation, and discourse markers.</div>
+                    <div style="margin-top: 6px;">● Key finding: better performance and better explanations are complementary,
+                        not competing — but come at a computational cost.</div>
+                </div>
+            </div>
+
+            <div class="prompt"><span class="prompt-icon">▶</span>$ echo "status"</div>
+            <div class="response">
+                <div style="line-height: 1.9; font-size: 0.92em;">
+                    <div><span style="color: #00ff88;">✓</span> &nbsp;Submitted — September 2025</div>
+                    <div><span style="color: #00ff88;">✓</span> &nbsp;Full paper &amp; artefacts available on request</div>
+                    <div><span style="opacity: 0.5;">○</span> &nbsp;GitHub — <span style="opacity: 0.5;">[ link coming soon ]</span></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 12px; margin-bottom: 6px;">
+                <div class="menu-item" id="collapse-fakenews" style="display: inline-block; font-size: 0.9em; padding: 4px 12px; border: 1px solid rgba(0,255,0,0.25);">
+                    <span class="arrow">▼</span> <span class="highlight">COLLAPSE</span>
                 </div>
             </div>
         </div>
-        <div class="prompt"><span class="prompt-icon">▶</span>$ echo "More projects coming soon..."</div>
-        <div class="response">
-            <div style="animation: typeIn 0.05s ease-out 0.8s forwards; opacity: 0;">
-                More projects coming soon...
-            </div>
-        </div>
-        <div class="ascii-divider">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
-        <div style="margin-top: 30px;">
-            <div class="menu-item" id="back-link" style="animation: fadeIn 0.3s ease-out 1s forwards; opacity: 0;">
+
+        <div class="ascii-divider" style="animation: fadeIn 0.3s ease-out 1s forwards; opacity: 0; margin-top: 20px;">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
+        <div style="margin-top: 20px; animation: fadeIn 0.3s ease-out 1.1s forwards; opacity: 0;">
+            <div class="menu-item" id="back-link" style="display: inline-block;">
                 <span class="arrow">&gt;</span> <span class="highlight">BACK TO MAIN</span>
             </div>
         </div>
     `;
 
     mainContent.appendChild(projectsSection);
+
+    // Expand / collapse project card
+    const entry = document.getElementById('project-fakenews');
+    const details = document.getElementById('project-fakenews-details');
+    const collapse = document.getElementById('collapse-fakenews');
+
+    entry.addEventListener('click', () => {
+        const isOpen = details.style.display !== 'none';
+        details.style.display = isOpen ? 'none' : 'block';
+        entry.querySelector('.arrow').textContent = isOpen ? '▶' : '▼';
+    });
+
+    collapse.addEventListener('click', () => {
+        details.style.display = 'none';
+        entry.querySelector('.arrow').textContent = '▶';
+    });
+
     document.getElementById('back-link').addEventListener('click', backToMain);
 }
 
