@@ -322,20 +322,17 @@ function showContact() {
         <div class="response" style="margin-bottom: 20px;">
             <div style="animation: slideIn 0.3s ease-out 0.3s forwards; opacity: 0; cursor: pointer;" 
                  onclick="openEmail()">
-                📧 <span style="text-decoration: underline;">your.email@example.com</span>
+                📧 <span style="text-decoration: underline;">cesarcamachovieira@gmail.com</span>
             </div>
         </div>
         <div class="prompt"><span class="prompt-icon">▶</span>$ ls socials/</div>
         <div class="response" style="margin-bottom: 30px;">
             <div style="animation: slideIn 0.3s ease-out 0.5s forwards; opacity: 0; line-height: 2;">
-                <div style="cursor: pointer; padding: 4px; margin: 4px 0;" onclick="openLink('https://github.com')">
-                    → GitHub (github.com/yourprofile)
+                <div style="cursor: pointer; padding: 4px; margin: 4px 0;" onclick="openLink('https://github.com/Cesarvieira14')">
+                    → GitHub (github.com/Cesarvieira14)
                 </div>
-                <div style="cursor: pointer; padding: 4px; margin: 4px 0;" onclick="openLink('https://linkedin.com')">
-                    → LinkedIn (linkedin.com/in/yourprofile)
-                </div>
-                <div style="cursor: pointer; padding: 4px; margin: 4px 0;" onclick="openLink('https://twitter.com')">
-                    → Twitter (twitter.com/yourprofile)
+                <div style="cursor: pointer; padding: 4px; margin: 4px 0;" onclick="openLink('https://www.linkedin.com/in/cesar--vieira')">
+                    → LinkedIn (linkedin.com/in/www.linkedin.com/in/cesar--vieira)
                 </div>
             </div>
         </div>
