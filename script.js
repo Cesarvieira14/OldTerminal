@@ -270,33 +270,41 @@ function showAbout() {
         <div class="prompt"><span class="prompt-icon">▶</span>$ cat about.txt</div>
         <div class="response" style="margin-bottom: 20px;">
             <div style="animation: slideIn 0.3s ease-out 0.1s forwards; opacity: 0; line-height: 1.8;">
-                <p>I'm César Vieira, a Computer Science graduate with a Master's degree</p>
-                <p>in Artificial Intelligence. My passion lies in building intelligent</p>
-                <p>systems, machine learning models, and elegant solutions to complex</p>
-                <p>computational problems.</p>
+                <p>I'm César Vieira — a Portuguese developer based in the UK, BSc Computer</p>
+                <p>Science (Hons) and MSc Artificial Intelligence, both from De Montfort</p>
+                <p>University Leicester. I like building things that actually work: mobile</p>
+                <p>apps, ML pipelines, and the occasional over-engineered portfolio site.</p>
             </div>
         </div>
         <div class="prompt"><span class="prompt-icon">▶</span>$ whoami --verbose</div>
         <div class="response" style="margin-bottom: 20px;">
             <div style="animation: slideIn 0.3s ease-out 0.3s forwards; opacity: 0; line-height: 1.8;">
-                <p><strong>Core Competencies:</strong></p>
-                <p>• Machine Learning & Deep Learning (TensorFlow, PyTorch)</p>
-                <p>• Natural Language Processing & Computer Vision</p>
-                <p>• Full-Stack Web Development (Node.js, React, Python)</p>
-                <p>• Software Architecture & System Design</p>
-                <p>• Data Analysis & Statistical Modeling</p>
+                <div style="margin-bottom: 6px; opacity: 0.7;">── Languages & Frameworks ──────────────────────</div>
+                <div>● <span class="highlight">Mobile:</span> &nbsp;&nbsp; Kotlin · Java · Android SDK · MVVM · Firebase</div>
+                <div>● <span class="highlight">ML/AI:</span> &nbsp;&nbsp;&nbsp; Python · PyTorch · scikit-learn · Hugging Face · NLTK</div>
+                <div>● <span class="highlight">XAI:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LIME · SHAP</div>
+                <div>● <span class="highlight">Tools:</span> &nbsp;&nbsp;&nbsp; Git · Android Studio · Google Colab · Agile / Scrum</div>
+            </div>
+        </div>
+        <div class="prompt"><span class="prompt-icon">▶</span>$ cat background.log</div>
+        <div class="response" style="margin-bottom: 20px;">
+            <div style="animation: slideIn 0.3s ease-out 0.5s forwards; opacity: 0; line-height: 1.9;">
+                <div style="margin-bottom: 6px; opacity: 0.7;">── Education ───────────────────────────────────</div>
+                <div><span style="opacity: 0.5;">2024–2025</span> &nbsp; MSc Artificial Intelligence &nbsp;·&nbsp; De Montfort University</div>
+                <div><span style="opacity: 0.5;">2021–2024</span> &nbsp; BSc Computer Science (Hons) &nbsp;·&nbsp; De Montfort University</div>
+                <div><span style="opacity: 0.5;">2020&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; Foundation Degree in Computing &nbsp;·&nbsp; De Montfort University</div>
             </div>
         </div>
         <div class="prompt"><span class="prompt-icon">▶</span>$ ls interests/</div>
         <div class="response" style="margin-bottom: 30px;">
-            <div style="animation: slideIn 0.3s ease-out 0.5s forwards; opacity: 0; line-height: 1.8;">
-                <p>AI Ethics • Generative Models • Computational Efficiency</p>
-                <p>Open Source Development • Knowledge Sharing</p>
+            <div style="animation: slideIn 0.3s ease-out 0.65s forwards; opacity: 0; line-height: 1.8;">
+                <p>Explainable AI &nbsp;•&nbsp; NLP &nbsp;•&nbsp; Android Development</p>
+                <p>Building useful tools &nbsp;•&nbsp; Making ML interpretable</p>
             </div>
         </div>
         <div class="ascii-divider">▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</div>
         <div style="margin-top: 30px;">
-            <div class="menu-item" id="back-link" style="animation: fadeIn 0.3s ease-out 0.7s forwards; opacity: 0;">
+            <div class="menu-item" id="back-link" style="animation: fadeIn 0.3s ease-out 0.8s forwards; opacity: 0;">
                 <span class="arrow">&gt;</span> <span class="highlight">BACK TO MAIN</span>
             </div>
         </div>
